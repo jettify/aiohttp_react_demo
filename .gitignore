@@ -58,4 +58,7 @@ target/
 .idea
 
 # js
-node_modules
+node_modules/
+npm-debug.log
+bower_components/
+.module-cache
