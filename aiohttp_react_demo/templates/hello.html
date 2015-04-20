@@ -13,8 +13,8 @@
       <div id="content"></div>
     </div>
     <!-- scripts -->
-    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bower_components/react/JSXTransformer.js') }}"></script>
+    <script src="{{ app.router['static'].url(filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ app.router['static'].url(filename='bower_components/react/JSXTransformer.js') }}"></script>
     <script type="text/jsx">
 
       /*** @jsx React.DOM */
