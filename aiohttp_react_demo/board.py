@@ -79,6 +79,22 @@ class Board:
         queue = [[i, j]]
         count = 0
         # TODO: bfs
+        while queue:
+            stone = queue.pop()
+            if stone in visited:
+                continue
+
+            neighbours = self.get_adjacent_intersections(stone[0], stone[1])
+            for n in neighbours:
+                state = self._board[n[0]][n[1]]
+                if state == self.EMPTY:
+                    count += 1
+                if state == color:
+                    queue.append(n[0], n[1])
+
+            visited.add(stone)
+            visited_list.append(stone)
+        return {'liberties': count, 'stones': visited_list}
 
     def get_adjacent_intersections(self, i, j):
         neighbours = []
